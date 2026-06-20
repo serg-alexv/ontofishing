@@ -1,0 +1,55 @@
+source_categories:
+  ai_benchmarks:
+    trust_level: high
+    examples:
+      - ARC Prize
+      - Kaggle competitions
+      - DrivenData competitions
+    expected_update_frequency: weekly
+  ai_safety_grants:
+    trust_level: high
+    examples:
+      - Anthropic Fellows
+      - Foresight Institute
+      - Manifund / AI safety grant directories
+    expected_update_frequency: weekly
+  open_source_bounties:
+    trust_level: medium
+    examples:
+      - Opire
+      - Gitcoin
+      - GitHub issue bounties
+    expected_update_frequency: daily-weekly
+  security_bounties:
+    trust_level: medium-high
+    examples:
+      - HackerOne public programs
+      - Bugcrowd public programs
+      - Immunefi
+      - huntr
+    expected_update_frequency: daily-weekly
+  biotech_challenges:
+    trust_level: high
+    examples:
+      - NIH Challenges
+      - Challenge.gov / USA.gov challenge listings
+      - TechConnect
+      - foundation prize calls
+    expected_update_frequency: weekly-monthly
+reject_policy:
+  hard_reject:
+    - closed
+    - expired
+    - no clear payout/funding
+    - invite-only without public route
+    - company-only
+    - student-only
+    - institutional nomination required
+    - no official source
+    - unclear deliverable
+  soft_risk:
+    - non-US payment restrictions
+    - NDA-heavy scope
+    - no public rules document
+    - high unpaid proposal burden
+    - depends on wet-lab/hardware partner

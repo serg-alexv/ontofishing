@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bounty Opportunity",
+  "type": "object",
+  "required": ["name", "official_url", "domain", "status_evidence", "eligibility", "deliverable"],
+  "properties": {
+    "name": {"type": "string"},
+    "official_url": {"type": "string", "format": "uri"},
+    "domain": {"type": "string"},
+    "status": {"enum": ["open", "rolling", "needs_verification", "closed"]},
+    "status_evidence": {"type": "string"},
+    "deadline": {"type": ["string", "null"]},
+    "payout_amount": {"type": ["string", "null"]},
+    "eligibility": {"type": "string"},
+    "deliverable": {"type": "string"},
+    "jurisdiction_or_payment_constraints": {"type": "string"},
+    "source_type": {"type": "string"},
+    "effort": {"enum": ["XS", "S", "M", "L", "XL"]},
+    "notes": {"type": "string"}
+  }
+}
