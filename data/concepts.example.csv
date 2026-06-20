@@ -1,0 +1,5 @@
+concept_id,label,category,artifact_reuse,description
+c-memory,Long-term memory,capability,direct,Agent memory systems and recall infrastructure
+c-evals,Evaluation harness,artifact,direct,Reusable benchmark or evaluation harness
+c-privacy,Privacy review,risk,partial,Privacy and security constraints that affect submission design
+c-kg,Knowledge graph,method,direct,Structured graph representation for research artifacts

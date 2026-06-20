@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ontology Concept",
+  "type": "object",
+  "required": ["concept_id", "label", "category"],
+  "properties": {
+    "concept_id": {"type": "string"},
+    "label": {"type": "string"},
+    "category": {
+      "type": "string",
+      "description": "Stable grouping used for bridge diversity scoring."
+    },
+    "artifact_reuse": {
+      "enum": ["direct", "partial", "none", ""],
+      "description": "Whether work on this concept directly reuses or creates a reusable artifact."
+    },
+    "description": {"type": "string"}
+  },
+  "additionalProperties": true
+}

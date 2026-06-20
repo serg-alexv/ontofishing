@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ontology Edge",
+  "type": "object",
+  "required": ["source_type", "source_id", "target_type", "target_id", "edge_type", "weight"],
+  "properties": {
+    "source_type": {"enum": ["opportunity", "concept"]},
+    "source_id": {"type": "string"},
+    "target_type": {"enum": ["opportunity", "concept"]},
+    "target_id": {"type": "string"},
+    "edge_type": {
+      "enum": [
+        "requires",
+        "produces",
+        "mitigates",
+        "enables",
+        "extends",
+        "depends_on",
+        "informs",
+        "competes_with"
+      ]
+    },
+    "weight": {"type": "number", "minimum": 0, "maximum": 1},
+    "evidence": {"type": "string"}
+  },
+  "additionalProperties": true
+}

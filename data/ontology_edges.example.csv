@@ -1,0 +1,6 @@
+source_type,source_id,target_type,target_id,edge_type,weight,evidence
+opportunity,Example AI Challenge,concept,c-memory,requires,0.9,Challenge asks for memory-aware AI systems
+opportunity,Example AI Challenge,concept,c-evals,produces,0.8,Submission can produce a reusable benchmark harness
+opportunity,Example AI Challenge,concept,c-privacy,mitigates,0.5,Privacy review reduces deployment risk
+concept,c-memory,concept,c-kg,enables,0.7,Memory traces can be represented as a knowledge graph
+concept,c-kg,concept,c-evals,informs,0.6,Graph structure can guide evaluation coverage
