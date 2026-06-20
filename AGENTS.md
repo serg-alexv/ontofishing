@@ -65,6 +65,18 @@ This repository is a verification-first bounty/advisory pipeline. Both Codex and
 - Grok findings must be imported into `data/opportunities_raw.csv` only after validation.
 - Grok should not modify Python source files unless the task is explicitly a code task.
 
+## Hugging Face Space API prompt
+To use this application (`timelions/ontofishing`: demo bounty cockpit):
+
+- API schema: `GET https://timelions-ontofishing.hf.space/gradio_api/info`
+- Config: `GET https://timelions-ontofishing.hf.space/config`
+- Queue call: `POST https://timelions-ontofishing.hf.space/gradio_api/queue/join`
+- Stream results: `GET https://timelions-ontofishing.hf.space/gradio_api/queue/data?session_hash=<same-uuid>`
+- File upload: `POST https://timelions-ontofishing.hf.space/gradio_api/upload -F "files=@file.ext"`
+- Auth header: `Authorization: Bearer $HF_TOKEN`
+
+Do not put tokens in repository files or URLs.
+
 ## Done means
 - `pytest` passes.
 - Generated files are placed under `data/` or `reports/`.

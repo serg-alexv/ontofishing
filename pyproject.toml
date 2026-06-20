@@ -3,7 +3,7 @@ name = "bounty-advisory-wizard"
 version = "0.1.0"
 description = "Verification-first advisory wizard for research/engineering bounty opportunities."
 requires-python = ">=3.10"
-dependencies = ["pydantic>=2.0", "pyyaml>=6.0"]
+dependencies = ["pydantic>=2.0", "pyyaml>=6.0", "gradio>=4.44.0"]
 
 [project.scripts]
 bounty-wizard = "bounty_wizard.cli:main"
