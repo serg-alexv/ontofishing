@@ -12,7 +12,7 @@ The token must have permission to write to the Hugging Face Space. Do not commit
 
 The workflow `.github/workflows/deploy-huggingface.yml` runs on pushes to `main` and can also be triggered manually from GitHub Actions.
 
-If `HF_TOKEN` is missing, the workflow emits a warning and skips deployment. The core GitHub pipeline remains usable.
+If `HF_TOKEN` is missing, the workflow fails before upload with a clear error. This prevents a skipped deploy from looking like a completed Space update.
 
 ## Manual Local Deploy
 
