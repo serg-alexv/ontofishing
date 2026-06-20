@@ -1,14 +1,37 @@
 # Repository agent contract
-
 This repository is a verification-first bounty/advisory pipeline. Both Codex and Grok Build may read this file.
 
-## Architecture
+## Architecture v1
 - Codex = local code maintainer
 - Grok Build = manually triggered subscription-auth heavy worker
 - ChatGPT = audit / strategy / execution planning
 - Python = deterministic scoring
 - Google Cloud / ADK = postponed
 - XAI_API_KEY = forbidden
+
+## Are v2
+- Stage 0 — Codex
+  -- maintain repo, tests, deterministic scripts
+
+- Stage 1 — Grok
+  -- discover opportunities online
+  -- output raw candidate JSON
+
+- Stage 2 — Python importer
+  -- normalize opportunities into CSV
+
+- Stage 3 — Python scorer
+  -- reject / score / rank
+
+- Stage 4 — agy or Gemini
+  -- semantic interpretation
+  -- application angle
+  -- hidden constraint detection
+  -- domain fit explanation
+
+- Stage 5 — ChatGPT
+  -- 0truth A+B audit
+  -- choose execute / prepare / monitor / reject
 
 ## Billing constraint
 - Do not use XAI_API_KEY.
