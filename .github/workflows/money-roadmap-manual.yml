@@ -1,0 +1,24 @@
+name: Money roadmap — manual public build
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-example:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test generic roadmap compiler
+        run: python3 -m unittest discover -s sites/money-roadmap -p test_build.py -v
+      - name: Compile reviewed public example only
+        run: python3 sites/money-roadmap/build.py --input sites/money-roadmap/example.json --out reports/money-roadmap --revision "$GITHUB_SHA"
+      - name: Save public build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: money-roadmap-public
+          path: reports/money-roadmap
+          if-no-files-found: error

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/serg-alexv/ontofishing/data/schema.funding_event.json",
+  "title": "Funding event v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "event_id",
+    "observed_at",
+    "route_id",
+    "event_type",
+    "from_stage",
+    "proposed_stage",
+    "source_kind",
+    "sanitized_summary",
+    "requires_chatgpt",
+    "requires_human",
+    "confidence",
+    "next_action_hint"
+  ],
+  "properties": {
+    "schema": {"const": "funding-event.v1"},
+    "event_id": {"type": "string", "minLength": 1},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "route_id": {"type": "string", "minLength": 1},
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "HUMAN_REPLY",
+        "ELIGIBILITY_CHANGE",
+        "PAYMENT_CONDITION",
+        "PROPOSAL_INVITE",
+        "REVIEWER_ASSIGNED",
+        "INFO_REQUEST",
+        "CONTRACT_EVENT",
+        "MILESTONE_EVENT",
+        "ACCEPTANCE_EVENT",
+        "PAYMENT_EVENT",
+        "DELIVERY_FAILURE",
+        "DEADLINE_EVENT",
+        "SOURCE_CONTRADICTION",
+        "OTHER_MATERIAL"
+      ]
+    },
+    "from_stage": {"type": "string"},
+    "proposed_stage": {"type": "string"},
+    "source_kind": {"enum": ["gmail", "official_web", "github", "other"]},
+    "source_pointer_private": {"type": ["string", "null"], "default": null},
+    "sanitized_summary": {"type": "string", "minLength": 1},
+    "deadline": {"type": ["string", "null"], "default": null},
+    "requires_chatgpt": {"type": "boolean"},
+    "requires_human": {"type": "boolean"},
+    "dedupe_key": {"type": ["string", "null"], "default": null},
+    "confidence": {"enum": ["direct", "provider_representation", "inference"]},
+    "next_action_hint": {"type": "string"}
+  }
+}
